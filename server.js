@@ -1,4 +1,4 @@
-var io = require('socket.io')(process.env.port || 3000);
+var io = require('socket.io')(process.env.port || 80);
 var shortid = require('shortid');
 
 console.log('server started');
@@ -35,7 +35,7 @@ io.on('connection', function(socket){
 
 		socket.emit('spawn', players[playerId]);
 		console.log('sending spawn to new player for id', playerId);
-	};
+	}
 
 	socket.on('move', function(data){
 		data.id = thisPlayerId;
@@ -101,7 +101,7 @@ io.on('connection', function(socket){
 		delete players[thisPlayerId];
 
 		socket.broadcast.emit('disconnected', {id : thisPlayerId});
-	})
+	});
 });
 
 function lineDistance(vectorA, vectorB){
