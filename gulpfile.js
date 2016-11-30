@@ -14,5 +14,5 @@ gulp.task('jshint',()=>{
 	require('./test.js');
 })
 .task('serve',()=>{
-	require('./main.js');
+	require('./server.js');
 });
