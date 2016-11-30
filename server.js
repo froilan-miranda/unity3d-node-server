@@ -1,4 +1,4 @@
-var io = require('socket.io')(process.env.port || 80);
+var io = require('socket.io')(process.env.PORT || 3000);
 var shortid = require('shortid');
 
 console.log('server started');
